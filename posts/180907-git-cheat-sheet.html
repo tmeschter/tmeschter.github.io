@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>My Blog</title>
+        <title>My Blog - Git Cheat Sheet</title>
         <meta name="description" content="Welcome!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="My Blog" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="My Blog" />
+        <meta property="og:title" content="My Blog - Git Cheat Sheet" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://tmeschter.github.io/" />
+        <meta property="og:url" content="http://tmeschter.github.io/posts/180907-git-cheat-sheet" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -89,9 +89,15 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Welcome!</h1>
-    </div>
+    
+<div class="post-heading">
+    <h1>Git Cheat Sheet</h1>
+    <div class="meta">        
+Published on Friday, September 7, 2018<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/git" class="btn btn-default btn-xs">git</a>
+        </div>     
+</div>
                                         </div>
                                 </div>
                         </div>
@@ -102,55 +108,39 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/180907-git-cheat-sheet">
-                        <h2 class="post-title">Git Cheat Sheet</h2>
-                    </a>
-                    <p class="post-meta">Posted on Friday, September 7, 2018</p>
-<p>A bunch of commands I use all the time (at least, often enough) but can never remember.</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/first-post">
-                        <h2 class="post-title">First Post</h2>
-                    </a>
-                    <p class="post-meta">Posted on Friday, January 1, 2016</p>
-<p>This is my first post!</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/git" class="btn btn-default btn-sm"> git (1)</a>
-                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (1)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p>A bunch of commands I use all the time (at least, often enough) but can never remember.</p>
+<h3 id="listing-tags">Listing Tags</h3>
+<pre><code>git tag --list foo/*
+</code></pre>
+<h3 id="rebase">Rebase</h3>
+<h4 id="rebase-the-current-branch-onto-a-target-branch">Rebase the current branch onto a target branch:</h4>
+<pre><code>git rebase &lt;target&gt;
+</code></pre>
+<p>This finds where <em>target</em> and the current branch forked and rebases all the changes from that point to the current head onto <em>target</em>.</p>
+<h4 id="rebase-another-branch-onto-a-target-branch">Rebase another branch onto a target branch:</h4>
+<pre><code>git rebase &lt;target&gt; &lt;topic&gt;
+</code></pre>
+<p>Checks out <em>topic</em> and then rebases it as above.</p>
+<h4 id="rebase-a-range-of-commits-onto-a-target-branch">Rebase a range of commits onto a target branch:</h4>
+<pre><code>git rebase --onto &lt;target&gt; &lt;base&gt; &lt;topic&gt;
+</code></pre>
+<p>This takes all the commits after <em>base</em> up through <em>topic</em> and rebases them on to <em>target</em>.</p>
+<h4 id="edit-commits-during-the-rebase">Edit commits during the rebase:</h4>
+<pre><code>git rebase -i ...
+</code></pre>
+<p>This lets you reorder, drop, squash, edit, etc. commits during the rebase.</p>
+<h3 id="bisect">Bisect</h3>
+<pre><code>git bisect start
+git bisect bad &lt;bad_commit&gt;
+git bisect good &lt;good_commit&gt;
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
+&lt;follow the prompts&gt;
 
-        
-    </div> 
-</div>
+git bisect reset
+</code></pre>
+
+
 
                                 </div>
                         </div>

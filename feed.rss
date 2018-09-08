@@ -5,8 +5,46 @@
 		<link>http://tmeschter.github.io/</link>
 		<description>Welcome!</description>
 		<copyright>2018</copyright>
-		<pubDate>Thu, 06 Sep 2018 03:54:53 GMT</pubDate>
-		<lastBuildDate>Thu, 06 Sep 2018 03:54:53 GMT</lastBuildDate>
+		<pubDate>Sat, 08 Sep 2018 04:44:14 GMT</pubDate>
+		<lastBuildDate>Sat, 08 Sep 2018 04:44:14 GMT</lastBuildDate>
+		<item>
+			<title>Git Cheat Sheet</title>
+			<link>http://tmeschter.github.io/posts/180907-git-cheat-sheet</link>
+			<description>&lt;p&gt;A bunch of commands I use all the time (at least, often enough) but can never remember.&lt;/p&gt;</description>
+			<guid>http://tmeschter.github.io/posts/180907-git-cheat-sheet</guid>
+			<pubDate>Fri, 07 Sep 2018 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;A bunch of commands I use all the time (at least, often enough) but can never remember.&lt;/p&gt;
+&lt;h3 id="listing-tags"&gt;Listing Tags&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;git tag --list foo/*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="rebase"&gt;Rebase&lt;/h3&gt;
+&lt;h4 id="rebase-the-current-branch-onto-a-target-branch"&gt;Rebase the current branch onto a target branch:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;git rebase &amp;lt;target&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This finds where &lt;em&gt;target&lt;/em&gt; and the current branch forked and rebases all the changes from that point to the current head onto &lt;em&gt;target&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id="rebase-another-branch-onto-a-target-branch"&gt;Rebase another branch onto a target branch:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;git rebase &amp;lt;target&amp;gt; &amp;lt;topic&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Checks out &lt;em&gt;topic&lt;/em&gt; and then rebases it as above.&lt;/p&gt;
+&lt;h4 id="rebase-a-range-of-commits-onto-a-target-branch"&gt;Rebase a range of commits onto a target branch:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;git rebase --onto &amp;lt;target&amp;gt; &amp;lt;base&amp;gt; &amp;lt;topic&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This takes all the commits after &lt;em&gt;base&lt;/em&gt; up through &lt;em&gt;topic&lt;/em&gt; and rebases them on to &lt;em&gt;target&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id="edit-commits-during-the-rebase"&gt;Edit commits during the rebase:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;git rebase -i ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This lets you reorder, drop, squash, edit, etc. commits during the rebase.&lt;/p&gt;
+&lt;h3 id="bisect"&gt;Bisect&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;git bisect start
+git bisect bad &amp;lt;bad_commit&amp;gt;
+git bisect good &amp;lt;good_commit&amp;gt;
+
+&amp;lt;follow the prompts&amp;gt;
+
+git bisect reset
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded>
+		</item>
 		<item>
 			<title>First Post</title>
 			<link>http://tmeschter.github.io/posts/first-post</link>
