@@ -110,22 +110,24 @@ Published on Friday, September 7, 2018<br>    </div>
                                         
 
 <p>A bunch of commands I use all the time (at least, often enough) but can never remember.</p>
+<p>[<strong>Updated Oct. 2nd, 2018:</strong> Minor formatting changes. Added short explanatory text to &quot;Listing Tags&quot; section.]</p>
 <h3 id="listing-tags">Listing Tags</h3>
+<p>List all tags that start with &quot;foo/&quot;:</p>
 <pre><code>git tag --list foo/*
 </code></pre>
 <h3 id="rebase">Rebase</h3>
 <h4 id="rebase-the-current-branch-onto-a-target-branch">Rebase the current branch onto a target branch:</h4>
 <pre><code>git rebase &lt;target&gt;
 </code></pre>
-<p>This finds where <em>target</em> and the current branch forked and rebases all the changes from that point to the current head onto <em>target</em>.</p>
+<p>This finds where <code>target</code> and the current branch forked and rebases all the changes from that point to the current head onto <code>target</code>.</p>
 <h4 id="rebase-another-branch-onto-a-target-branch">Rebase another branch onto a target branch:</h4>
 <pre><code>git rebase &lt;target&gt; &lt;topic&gt;
 </code></pre>
-<p>Checks out <em>topic</em> and then rebases it as above.</p>
+<p>Checks out <code>topic</code> and then rebases it as above.</p>
 <h4 id="rebase-a-range-of-commits-onto-a-target-branch">Rebase a range of commits onto a target branch:</h4>
 <pre><code>git rebase --onto &lt;target&gt; &lt;base&gt; &lt;topic&gt;
 </code></pre>
-<p>This takes all the commits after <em>base</em> up through <em>topic</em> and rebases them on to <em>target</em>.</p>
+<p>This takes all the commits after <code>base</code> up through <code>topic</code> and rebases them onto <code>target</code>.</p>
 <h4 id="edit-commits-during-the-rebase">Edit commits during the rebase:</h4>
 <pre><code>git rebase -i ...
 </code></pre>
