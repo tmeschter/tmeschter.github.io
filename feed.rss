@@ -5,8 +5,8 @@
 		<link>http://tmeschter.github.io/</link>
 		<description>Welcome!</description>
 		<copyright>2018</copyright>
-		<pubDate>Tue, 02 Oct 2018 16:19:24 GMT</pubDate>
-		<lastBuildDate>Tue, 02 Oct 2018 16:19:24 GMT</lastBuildDate>
+		<pubDate>Thu, 04 Oct 2018 16:27:47 GMT</pubDate>
+		<lastBuildDate>Thu, 04 Oct 2018 16:27:47 GMT</lastBuildDate>
 		<item>
 			<title>Git Cheat Sheet</title>
 			<link>http://tmeschter.github.io/posts/180907-git-cheat-sheet</link>
@@ -15,6 +15,7 @@
 			<pubDate>Fri, 07 Sep 2018 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;A bunch of commands I use all the time (at least, often enough) but can never remember.&lt;/p&gt;
 &lt;p&gt;[&lt;strong&gt;Updated Oct. 2nd, 2018:&lt;/strong&gt; Minor formatting changes. Added short explanatory text to &amp;quot;Listing Tags&amp;quot; section.]&lt;/p&gt;
+&lt;p&gt;[&lt;strong&gt;Updated Oct. 3rd, 2018:&lt;/strong&gt; Added section on &amp;quot;Managing Branches&amp;quot;]&lt;/p&gt;
 &lt;h3 id="listing-tags"&gt;Listing Tags&lt;/h3&gt;
 &lt;p&gt;List all tags that start with &amp;quot;foo/&amp;quot;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git tag --list foo/*
@@ -45,6 +46,14 @@ git bisect good &amp;lt;good_commit&amp;gt;
 
 git bisect reset
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="managing-branches"&gt;Managing Branches&lt;/h3&gt;
+&lt;p&gt;I tend to end up with a lot of local branches and can't always remember which ones have already been merged--and can thus be deleted--and which ones contain in-progress work. The &lt;code&gt;--merged&lt;/code&gt; and &lt;code&gt;--no-merged&lt;/code&gt; options can help.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git branch --merged master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This shows the local branches that have already been merged into &lt;code&gt;master&lt;/code&gt;--that is, the commits the branches point to can be reached from the commit pointed to by &lt;code&gt;master&lt;/code&gt;. These will tend to be branches I can now delete with &lt;code&gt;git branch -D&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git branch --no-merged master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the other hand, this command shows the branches that &lt;em&gt;haven't&lt;/em&gt; been merged into &lt;code&gt;master&lt;/code&gt;. I find these need further review before I can decide what to do with them. Some may be in-progress work that I just had to put on the back burner for a while but intend to come back to; others may have been merged into different branches (like last-minute fixes to a release branch).&lt;/p&gt;
 </content:encoded>
 		</item>
 		<item>

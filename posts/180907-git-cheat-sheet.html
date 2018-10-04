@@ -111,6 +111,7 @@ Published on Friday, September 7, 2018<br>    </div>
 
 <p>A bunch of commands I use all the time (at least, often enough) but can never remember.</p>
 <p>[<strong>Updated Oct. 2nd, 2018:</strong> Minor formatting changes. Added short explanatory text to &quot;Listing Tags&quot; section.]</p>
+<p>[<strong>Updated Oct. 3rd, 2018:</strong> Added section on &quot;Managing Branches&quot;]</p>
 <h3 id="listing-tags">Listing Tags</h3>
 <p>List all tags that start with &quot;foo/&quot;:</p>
 <pre><code>git tag --list foo/*
@@ -141,6 +142,14 @@ git bisect good &lt;good_commit&gt;
 
 git bisect reset
 </code></pre>
+<h3 id="managing-branches">Managing Branches</h3>
+<p>I tend to end up with a lot of local branches and can't always remember which ones have already been merged--and can thus be deleted--and which ones contain in-progress work. The <code>--merged</code> and <code>--no-merged</code> options can help.</p>
+<pre><code>git branch --merged master
+</code></pre>
+<p>This shows the local branches that have already been merged into <code>master</code>--that is, the commits the branches point to can be reached from the commit pointed to by <code>master</code>. These will tend to be branches I can now delete with <code>git branch -D</code>.</p>
+<pre><code>git branch --no-merged master
+</code></pre>
+<p>On the other hand, this command shows the branches that <em>haven't</em> been merged into <code>master</code>. I find these need further review before I can decide what to do with them. Some may be in-progress work that I just had to put on the back burner for a while but intend to come back to; others may have been merged into different branches (like last-minute fixes to a release branch).</p>
 
 
 
